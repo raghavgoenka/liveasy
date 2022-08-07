@@ -39,7 +39,7 @@ public class LoadController {
     }
 
     // updating load details by id
-    @PutMapping("/load")
+    @PutMapping("/load/{loadId}")
     public Load updateLoad(@RequestBody Load load){
       return this.loadServices.updateLoad(load);
     }

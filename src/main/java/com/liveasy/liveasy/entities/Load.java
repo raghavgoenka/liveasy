@@ -1,8 +1,13 @@
 package com.liveasy.liveasy.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
-
+@Entity
+@Table(name="load")
 public class Load {
+
     public Load(String loadingPoint, String unloadingPoint, String productType, String truckType, int noOfTrucks, int weight, String comment, int shipperId, String date) {
         this.loadingPoint = loadingPoint;
         this.unloadingPoint = unloadingPoint;
@@ -14,6 +19,7 @@ public class Load {
         this.shipperId = shipperId;
         this.date = date;
     }
+    public  Load(){}
 
     public String getLoadingPoint() {
         return loadingPoint;
@@ -92,9 +98,11 @@ public class Load {
         this.truckType = truckType;
     }
 
+    @Id
+    private  int shipperId;
     private String truckType;
     private String comment;
-    private int noOfTrucks,weight,shipperId;
+    private int noOfTrucks,weight;
     private String date;
 
 }
